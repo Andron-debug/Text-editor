@@ -19,7 +19,8 @@ namespace Text_editor
         Button[] b; 
         private void Main_Load(object sender, EventArgs e)
         {
-            b = new Button[26];
+            char[] ch = { ' ', '?', '.', '!' };
+            b = new Button[26+ch.Length];
             for (int i = 0; i < b.Length; i++)
             {
                 b[i] = new Button();
@@ -31,6 +32,10 @@ namespace Text_editor
                 b[i].Text = Convert.ToString(Convert.ToChar(i+65));
                 b[i].Name = "Button" + Convert.ToChar(i + 65);
                 Controls.Add(b[i]);
+            }
+            for (int i = 0; i < ch.Length; i++)
+            {
+                b[i + 26].Text = Convert.ToString(ch[i]);
             }
         }
         private void button_clicked(object sender, EventArgs e)
