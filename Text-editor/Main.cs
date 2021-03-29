@@ -21,6 +21,7 @@ namespace Text_editor
         {
             char[] ch = { ' ', '?', '.', '!' };
             b = new Button[26+ch.Length];
+            this.Width = b.Length * 40 + 30;
             for (int i = 0; i < b.Length; i++)
             {
                 b[i] = new Button();
@@ -37,6 +38,7 @@ namespace Text_editor
             {
                 b[i + 26].Text = Convert.ToString(ch[i]);
             }
+            
         }
         private void button_clicked(object sender, EventArgs e)
         {
