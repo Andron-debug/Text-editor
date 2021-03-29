@@ -1,7 +1,7 @@
 ﻿
 namespace Text_editor
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,13 +29,32 @@ namespace Text_editor
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.textBox_str = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // textBox_str
+            // 
+            this.textBox_str.Location = new System.Drawing.Point(38, 12);
+            this.textBox_str.Name = "textBox_str";
+            this.textBox_str.Size = new System.Drawing.Size(1008, 27);
+            this.textBox_str.TabIndex = 1;
+            // 
+            // Main
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1069, 412);
+            this.Controls.Add(this.textBox_str);
+            this.Name = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBox_str;
     }
 }
 
