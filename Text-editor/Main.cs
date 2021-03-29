@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Text_editor
 {
@@ -49,6 +50,14 @@ namespace Text_editor
         private void button1_Click(object sender, EventArgs e)
         {
             textBox_str.Text = "";
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+                StreamWriter sr = new StreamWriter("My_str.txt", checkBox1.Checked);
+                sr.WriteLine(textBox_str.Text);
+                sr.Close();
+            
         }
     }
 }

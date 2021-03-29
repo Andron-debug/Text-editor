@@ -31,11 +31,13 @@ namespace Text_editor
         {
             this.textBox_str = new System.Windows.Forms.TextBox();
             this.Clean = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox_str
             // 
-            this.textBox_str.Location = new System.Drawing.Point(38, 12);
+            this.textBox_str.Location = new System.Drawing.Point(12, 12);
             this.textBox_str.Name = "textBox_str";
             this.textBox_str.Size = new System.Drawing.Size(1008, 27);
             this.textBox_str.TabIndex = 1;
@@ -50,11 +52,33 @@ namespace Text_editor
             this.Clean.UseVisualStyleBackColor = true;
             this.Clean.Click += new System.EventHandler(this.button1_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(171, 278);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(112, 24);
+            this.checkBox1.TabIndex = 3;
+            this.checkBox1.Text = "Дозаписать";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(352, 268);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 43);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Записать";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Clean_up
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1168, 412);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.Clean);
             this.Controls.Add(this.textBox_str);
             this.Name = "Clean_up";
@@ -68,6 +92,8 @@ namespace Text_editor
 
         private System.Windows.Forms.TextBox textBox_str;
         private System.Windows.Forms.Button Clean;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
