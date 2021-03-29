@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Text_editor
 {
-    public partial class Main : Form
+    public partial class Clean_up : Form
     {
-        public Main()
+        public Clean_up()
         {
             InitializeComponent();
         }
@@ -27,10 +27,21 @@ namespace Text_editor
                 b[i].Height = 40;
                 b[i].Top = 100;
                 b[i].Left = i * b[i].Height + 5;
+                b[i].Click += button_clicked;
                 b[i].Text = Convert.ToString(Convert.ToChar(i+65));
                 b[i].Name = "Button" + Convert.ToChar(i + 65);
                 Controls.Add(b[i]);
             }
+        }
+        private void button_clicked(object sender, EventArgs e)
+        {
+            Button c = (Button)sender;
+            textBox_str.Text += c.Text;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox_str.Text = "";
         }
     }
 }
