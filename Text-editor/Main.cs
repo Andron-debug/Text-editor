@@ -82,6 +82,22 @@ namespace Text_editor
                     }
                     textBox_str.Text = new_str;
                     break;
+                case 2: // заменить IVT на ISAY
+                    for (int i = 0; i <last_str.Length; i++)
+                    {
+                        if ((last_str[i] == 'I')&&(last_str[i+1] == 'V')&&(last_str[i+2] == 'T'))
+                        {
+                            new_str += "IVAY";
+                            i += 2;
+                        }
+                        else
+                        {
+                            new_str += last_str[i];
+                        }
+                        
+                    }
+                    textBox_str.Text = new_str;
+                    break;
                 default:
                     MessageBox.Show("Выберете режим");
                     break;
