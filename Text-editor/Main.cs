@@ -20,7 +20,7 @@ namespace Text_editor
         Button[] b; 
         private void Main_Load(object sender, EventArgs e)
         {
-            char[] ch = { ' ', '?', '.', '!' };
+            char[] ch = { ' ', '?', '*', '!' };
             b = new Button[26+ch.Length];
             this.Width = b.Length * 40 + 30;
             for (int i = 0; i < b.Length; i++)
@@ -58,6 +58,26 @@ namespace Text_editor
                 sr.WriteLine(textBox_str.Text);
                 sr.Close();
             
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            int si = comboBox1.SelectedIndex;
+            string new_str = "";
+            string last_str = textBox_str.Text;
+            switch (si)
+            {
+                case 0: // Удалить "*"
+                    for (int i = 0; i < last_str.Length; i++)
+                    {
+                        if (last_str[i] != Convert.ToChar("*")) new_str += last_str[i];
+                    }
+                    textBox_str.Text = new_str;
+                    break;
+                default:
+                    MessageBox.Show("Выберете режим");
+                    break;
+            }
         }
     }
 }
