@@ -98,6 +98,14 @@ namespace Text_editor
                     }
                     textBox_str.Text = new_str;
                     break;
+                case 3: // Все в нижний регистр
+                    for (int i = 0; i < last_str.Length; i++)
+                    {
+                        if ((Convert.ToInt32(last_str[i]) >= 65) && (Convert.ToInt32(last_str[i]) <= 90)) new_str += Convert.ToString(Convert.ToChar(last_str[i] + Convert.ToChar(32)));
+                        else new_str += last_str[i];
+                        textBox_str.Text = new_str;
+                    }
+                    break;
                 default:
                     MessageBox.Show("Выберете режим");
                     break;
