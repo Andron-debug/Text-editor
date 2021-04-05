@@ -74,6 +74,14 @@ namespace Text_editor
                     }
                     textBox_str.Text = new_str;
                     break;
+                case 1: // Заменить "*" на "+"
+                    for (int i = 0; i < last_str.Length; i++)
+                    {
+                        if (last_str[i] != Convert.ToChar("*")) new_str += last_str[i];
+                        else new_str += "+";
+                    }
+                    textBox_str.Text = new_str;
+                    break;
                 default:
                     MessageBox.Show("Выберете режим");
                     break;
