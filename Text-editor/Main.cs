@@ -115,6 +115,24 @@ namespace Text_editor
                     }
                     textBox_str.Text = "Количество слов: " + words;
                         break;
+                case 5:// Счетчик предложений
+                    int sentences = -1;
+                    if (last_str != "") sentences++;
+                    last_str += " ";
+                    char[] ends = {'.', '!','?' }; 
+                    for (int i = 0; i < last_str.Length - 1; i++)
+                    {
+                        for (int j = 0; j < ends.Length; j++)
+                        {
+                            if((last_str[i] == ends[j])&&(last_str[i+1] == ' '))
+                            {
+                                sentences++;
+                                break;
+                            }
+                        }
+                    }
+                    textBox_str.Text = "Количество предложений: " + sentences;
+                    break;
                 default:
                     MessageBox.Show("Выберете режим");
                     break;
