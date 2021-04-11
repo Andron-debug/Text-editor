@@ -98,7 +98,7 @@ namespace Text_editor
                     }
                     textBox_str.Text = new_str;
                     break;
-                case 3: // Все в нижний регистр
+                case 3: //  Все в нижний регистр
                     for (int i = 0; i < last_str.Length; i++)
                     {
                         if ((Convert.ToInt32(last_str[i]) >= 65) && (Convert.ToInt32(last_str[i]) <= 90)) new_str += Convert.ToString(Convert.ToChar(last_str[i] + Convert.ToChar(32)));
@@ -106,6 +106,15 @@ namespace Text_editor
                         textBox_str.Text = new_str;
                     }
                     break;
+                case 4: //Определить количество слов
+                    int words = 0;
+                    if (last_str != "") words++;
+                    for (int i = 0; i < last_str.Length; i++)
+                    {
+                        if (last_str[i] == ' ') words++;
+                    }
+                    textBox_str.Text = "Количество слов: " + words;
+                        break;
                 default:
                     MessageBox.Show("Выберете режим");
                     break;

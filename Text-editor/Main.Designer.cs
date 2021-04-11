@@ -81,7 +81,8 @@ namespace Text_editor
             "Удалить \"*\"",
             "Заменить \"*\" на \"+\"",
             "Заменить IVT на ISAY",
-            "Все в нижней регистр"});
+            "Все в нижней регистр",
+            "Определить количество слов"});
             this.comboBox1.Location = new System.Drawing.Point(554, 268);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(151, 28);
