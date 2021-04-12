@@ -74,10 +74,11 @@ namespace Text_editor
             string[] result = new string[wors_count(st)];
             string word = "";
             int j = 0;
-            for (int i = 0;i < st.Length; i++)
+            st += ' ';
+            for (int i = 0;i < st.Length - 1; i++)
             {
                 if (st[i] != ' ') word += st[i];
-                else
+                if (st[i] != ' ' && st[i+1] ==' ')
                 {
                     result[j] = word;
                     word = "";
@@ -169,11 +170,23 @@ namespace Text_editor
                     }
                     textBox_str.Text = "Самое длинное слово " + words[max_i];
                     break;
+                case 7: // Слова на I
+                    textBox_str.Text = "Слова на I";
+                    for (int i = 0; i < words.Length; i++)
+                    {
+                        if ((words[i][0] == 'I') || (words[i][0] == 'i')) textBox_str.Text += words[i]+ ' ';
+                    }
+                    break;
 
                 default:
                     MessageBox.Show("Выберете режим");
                     break;
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -84,11 +84,13 @@ namespace Text_editor
             "Все в нижней регистр",
             "Определить количество слов",
             "Определить количество предложений",
-            "Самое длинное слово"});
+            "Самое длинное слово",
+            "Слова на I"});
             this.comboBox1.Location = new System.Drawing.Point(476, 268);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(229, 28);
             this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Edit
             // 
