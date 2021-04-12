@@ -83,10 +83,11 @@ namespace Text_editor
             "Заменить IVT на ISAY",
             "Все в нижней регистр",
             "Определить количество слов",
-            "Определить количество предложений"});
-            this.comboBox1.Location = new System.Drawing.Point(554, 268);
+            "Определить количество предложений",
+            "Самое длинное слово"});
+            this.comboBox1.Location = new System.Drawing.Point(476, 268);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.Size = new System.Drawing.Size(229, 28);
             this.comboBox1.TabIndex = 5;
             // 
             // Edit

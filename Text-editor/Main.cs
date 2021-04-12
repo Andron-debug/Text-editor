@@ -59,12 +59,40 @@ namespace Text_editor
                 sr.Close();
             
         }
+        private int wors_count(string st)
+        {
+            int words = 0;
+            st += ' ';
+            for (int i = 0; i < st.Length - 1; i++)
+            {
+                if ((st[i] != ' ') && (st[i + 1] == ' ')) words++;
+            }
+            return words;
+        }
+        private string[] words_array(string st)
+        {
+            string[] result = new string[wors_count(st)];
+            string word = "";
+            int j = 0;
+            for (int i = 0;i < st.Length; i++)
+            {
+                if (st[i] != ' ') word += st[i];
+                else
+                {
+                    result[j] = word;
+                    word = "";
+                    j++;
+                }
+            }
+            return result;
+        }
 
         private void Edit_Click(object sender, EventArgs e)
         {
             int si = comboBox1.SelectedIndex;
             string new_str = "";
             string last_str = textBox_str.Text;
+            string[] words = words_array(last_str);
             switch (si)
             {
                 case 0: // Удалить "*"
@@ -107,13 +135,8 @@ namespace Text_editor
                     }
                     break;
                 case 4: //Определить количество слов
-                    int words = 0;
-                    last_str += ' ';
-                    for (int i = 0; i < last_str.Length-1; i++)
-                    {
-                        if ((last_str[i] != ' ')&&(last_str[i+1] == ' '))words++;
-                    }
-                    textBox_str.Text = "Количество слов: " + words;
+
+                    textBox_str.Text = "Количество слов: " + wors_count(last_str);
                         break;
                 case 5:// Счетчик предложений
                     int sentences = -1;
@@ -133,6 +156,20 @@ namespace Text_editor
                     }
                     textBox_str.Text = "Количество предложений: " + sentences;
                     break;
+                case 6: //Самое длинное слово
+                    int max_i = 0;
+                    int max_l = words[0].Length;
+                    for (int i = 0; i<words.Length; i++)
+                    {
+                        if (max_l < words[i].Length) 
+                        {
+                            max_l = words[i].Length;
+                            max_i = i;
+                         }
+                    }
+                    textBox_str.Text = "Самое длинное слово " + words[max_i];
+                    break;
+
                 default:
                     MessageBox.Show("Выберете режим");
                     break;
