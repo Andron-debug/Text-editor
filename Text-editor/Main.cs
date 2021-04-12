@@ -108,10 +108,10 @@ namespace Text_editor
                     break;
                 case 4: //Определить количество слов
                     int words = 0;
-                    if (last_str != "") words++;
-                    for (int i = 0; i < last_str.Length; i++)
+                    last_str += ' ';
+                    for (int i = 0; i < last_str.Length-1; i++)
                     {
-                        if (last_str[i] == ' ') words++;
+                        if ((last_str[i] != ' ')&&(last_str[i+1] == ' '))words++;
                     }
                     textBox_str.Text = "Количество слов: " + words;
                         break;
